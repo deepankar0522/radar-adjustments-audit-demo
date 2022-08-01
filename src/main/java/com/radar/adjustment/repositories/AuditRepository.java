@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AuditRepository extends JpaRepository<AuditRepository, Integer> {
+public interface AuditRepository extends JpaRepository<AdjustmentAudit, Integer> {
 
     @Query(value = "SELECT * FROM AdjustmentAudit WHERE adjustmentId = :adjustmentId", nativeQuery = true)
     List<AdjustmentAudit> getAuditByAdjustmentId(Integer adjustmentId);
